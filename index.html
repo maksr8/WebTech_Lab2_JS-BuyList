@@ -1,171 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="uk-UA">
-    <meta charset="UTF-8">
-    <title>
+	<meta charset="UTF-8">
+	<title>
 		Кошик товарів
 	</title>
-	<meta name="author" content="Розумєй Максим"/>
-	<meta name="description" content="ДЗ2. Створити Кошик товарів."/>
-	<meta name="keywords" content="кошик, товарів, товар"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-	<link rel="shortcut icon" href="icon2.png" type="image/x-icon"/>
+	<meta name="author" content="Розумєй Максим" />
+	<meta name="description" content="ДЗ2-3. Створити Кошик товарів." />
+	<meta name="keywords" content="кошик, товарів, товар" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="main.css" />
+	<link rel="shortcut icon" href="icon2.png" type="image/x-icon" />
 </head>
+
 <body>
 	<main>
 		<section class="column" id="col1">
 			<div id="add-div">
 				<form id="add-form">
-					<input id="input-prod-name" type="text" name="product" placeholder="Назва товару" required/>
+					<input id="input-prod-name" type="text" name="name" placeholder="Назва товару" required
+						minlength="2" maxlength="17" pattern="[A-Za-zА-ЩЬЮЯҐЄІЇа-щьюяґєії0-9]+" autocomplete="off" />
 					<div id="outer-submit-prod-name">
 						<button id="submit-prod-name" data-tooltip="Додати товар до кошика">Додати</button>
-					</div>	
+					</div>
 				</form>
-			</div>
-			<div class="not-bought">
-				<span class="product-name">
-					Помідори
-				</span>
-				<div class="adjust-amount">
-					<div class="outer-minus">
-						<button class="minus" data-tooltip="Зменшити кількість товару">
-							−
-						</button>
-					</div>
-					<span class="amount">2</span>
-					<div class="outer-plus">
-						<button class="plus" data-tooltip="Збільшити кількість товару">
-							+
-						</button>
-					</div>
-				</div>
-				<div class="div-isbought">
-					<div class="outer-isbought">
-						<button class="isbought" data-tooltip="Перемкнути стан товару на не куплений">
-							Не куплено
-						</button>
-					</div>
-					<div class="outer-remove">
-						<button class="remove" data-tooltip="Видалити товар">
-							×
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="bought">
-				<span class="product-name">
-					Печиво
-				</span>
-				<div class="adjust-amount">
-					<div class="outer-minus">
-						<button class="minus" data-tooltip="Зменшити кількість товару">
-							−
-						</button>
-					</div>
-					<span class="amount">2</span>
-					<div class="outer-plus">
-						<button class="plus" data-tooltip="Збільшити кількість товару">
-							+
-						</button>
-					</div>
-				</div>
-				<div class="div-isbought">
-					<div class="outer-isbought">
-						<button class="isbought" data-tooltip="Перемкнути стан товару на куплений">
-							Куплено
-						</button>
-					</div>
-					<div class="outer-remove">
-						<button class="remove" data-tooltip="Видалити товар">
-							×
-						</button>
-					</div>
-				</div>
-			</div>	
-			<div class="bought">
-				<span class="change-product-name">
-					Сир
-				</span>
-				<div class="adjust-amount">
-					<button class="minus-disabled" data-tooltip="Мінімальна кількість товару">
-						−
-					</button>
-					<span class="amount">1</span>
-					<div class="outer-plus">
-						<button class="plus" data-tooltip="Збільшити кількість товару">
-							+
-						</button>
-					</div>
-				</div>
-				<div class="div-isbought">
-					<div class="outer-isbought">
-						<button class="isbought" data-tooltip="Перемкнути стан товару на куплений">
-							Куплено
-						</button>
-					</div>
-					<div class="outer-remove">
-						<button class="remove" data-tooltip="Видалити товар">
-							×
-						</button>
-					</div>
-				</div>
 			</div>
 		</section>
 		<section class="column" id="col2">
 			<div class="category">
 				Залишилося
 			</div>
-			<div id="bought-category">
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
-				<span class="product-item">
-					Сир
-					<span class="amount-left">1</span>
-				</span>
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
+			<div id="not-bought-category">
 			</div>
 			<div class="category">
 				Куплено
 			</div>
-			<div id="not-bought-category">
-				<span class="product-item">
-					Помідори
-					<span class="amount-left">2</span>
-				</span>
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
-				<span class="product-item">
-					Печиво
-					<span class="amount-left">2</span>
-				</span>
+			<div id="bought-category">
 			</div>
 		</section>
 	</main>
@@ -176,11 +47,13 @@
 		<div id="div-badge-author">
 			<span id="badge-created-by">
 				Created by:
-			</span><br/>
+			</span><br />
 			<span id="badge-author">
 				Maksym Rozumiei
 			</span>
 		</div>
 	</div>
+	<script src="script.js"></script>
 </body>
+
 </html>
