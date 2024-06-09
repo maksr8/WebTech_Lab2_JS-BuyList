@@ -182,7 +182,6 @@ function appendItem(item) {
         console.log(item.name);
         console.log(index);
         itemsArray.splice(index, 1);
-        localStorage.user = JSON.stringify(itemsArray);
         prodDiv.remove();
         prodItemSpan.remove();
       } else if (event.target.className === 'isbought') {
@@ -190,7 +189,6 @@ function appendItem(item) {
         // toggle isBought
 
         itemsArray[index].isBought = !itemsArray[index].isBought;
-        localStorage.user = JSON.stringify(itemsArray);
         prodDiv.classList.toggle('bought');
         prodDiv.classList.toggle('not-bought');
 
@@ -208,7 +206,6 @@ function appendItem(item) {
         // increase quantity
 
         let curQuantity = ++itemsArray[index].quantity;
-        localStorage.user = JSON.stringify(itemsArray);
         prodAmountSpan.textContent = curQuantity;
         amountSpan.textContent = curQuantity;
 
@@ -222,7 +219,6 @@ function appendItem(item) {
         // decrease quantity
 
         let curQuantity = --itemsArray[index].quantity;
-        localStorage.user = JSON.stringify(itemsArray);
         if (curQuantity <= 1) {
           outerMinusDiv.className = 'outer-minus-disabled';
           minusButton.className = 'minus-disabled';
@@ -241,6 +237,8 @@ function appendItem(item) {
         productNameInput.value = productName.textContent;
         productNameInput.focus();
       }
+      
+      localStorage.user = JSON.stringify(itemsArray);
     }
   });
 }

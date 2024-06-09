@@ -91,7 +91,7 @@ body {
 	width: 60%;
 }
 
-.product-name:hover {
+.not-bought .product-name:hover {
 	cursor: pointer;
 }
 
